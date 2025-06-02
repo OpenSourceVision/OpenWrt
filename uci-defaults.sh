@@ -1,6 +1,6 @@
 
 # OpenWrt 24.10.1 uci-defaults 首次启动配置脚本
-# 旁路由模式 - IP: 192.168.110.112
+# 旁路由模式 - IP: 192.168.110.110
 
 # 设置脚本执行日志
 exec > /tmp/uci-defaults.log 2>&1
@@ -54,7 +54,7 @@ echo "=== 配置LAN接口 ==="
 uci set network.lan=interface
 uci set network.lan.proto='static'
 uci set network.lan.device='br-lan'
-uci set network.lan.ipaddr='192.168.110.112'
+uci set network.lan.ipaddr='192.168.110.110'
 uci set network.lan.netmask='255.255.255.0'
 uci set network.lan.gateway='192.168.110.1'
 uci set network.lan.broadcast='192.168.110.255'
@@ -153,13 +153,13 @@ echo 1 > /proc/sys/net/ipv4/conf/all/route_localnet
 echo 134217728 > /proc/sys/net/core/rmem_max
 echo 134217728 > /proc/sys/net/core/wmem_max
 
-logger -t startup "OpenWrt 24.10.1 旁路由启动完成 - IP: 192.168.110.112"
+logger -t startup "OpenWrt 24.10.1 旁路由启动完成 - IP: 192.168.110.110"
 
 # 显示启动信息
 echo "=================================="
 echo "OpenWrt 24.10.1 旁路由启动完成！"
-echo "管理地址: http://192.168.110.112"
-echo "SSH访问: ssh root@192.168.110.112"
+echo "管理地址: http://192.168.110.110"
+echo "SSH访问: ssh root@192.168.110.110"
 echo "=================================="
 
 exit 0
@@ -184,14 +184,14 @@ echo "版本信息: OpenWrt 24.10.1"
 echo "配置时间: $(date)"
 echo ""
 echo "网络配置:"
-echo "  设备IP: 192.168.110.112/24"
+echo "  设备IP: 192.168.110.110/24"
 echo "  网关: 192.168.110.1"
 echo "  DNS: 223.5.5.5, 192.168.110.1"
 echo "  时区: Asia/Shanghai (CST-8)"
 echo ""
 echo "访问信息:"
-echo "  Web管理: http://192.168.110.112"
-echo "  SSH访问: ssh root@192.168.110.112"
+echo "  Web管理: http://192.168.110.110"
+echo "  SSH访问: ssh root@192.168.110.110"
 echo "  管理界面: 中文"
 echo ""
 echo "功能状态:"
