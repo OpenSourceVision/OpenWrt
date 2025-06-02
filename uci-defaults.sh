@@ -20,7 +20,7 @@ EOF
 
 # 2. 配置系统设置 - 上海时区
 echo "=== 配置系统设置 ==="
-uci set system.@system[0].hostname='OpenWrt-Bypass'
+uci set system.@system[0].hostname='OpenWrt'
 uci set system.@system[0].timezone='CST-8'
 uci set system.@system[0].zonename='Asia/Shanghai'
 uci set system.@system[0].log_size='64'
