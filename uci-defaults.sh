@@ -122,13 +122,13 @@ uci set wireless.default_radio1.disabled='1' 2>/dev/null || true
 uci commit wireless
 
 
-# 9. 设置默认语言为中文
+# 10. 设置默认语言为中文
 echo "=== 设置中文界面 ==="
 uci set luci.main.lang='zh_cn'
 uci set luci.main.mediaurlbase='/luci-static/bootstrap'
 uci commit luci
 
-# 10. 配置系统参数
+# 11. 配置系统参数
 echo "=== 配置系统参数 ==="
 # 启用IP转发
 echo 'net.ipv4.ip_forward=1' >> /etc/sysctl.conf
@@ -139,7 +139,7 @@ echo 'net.core.rmem_max=134217728' >> /etc/sysctl.conf
 echo 'net.core.wmem_max=134217728' >> /etc/sysctl.conf
 echo 'net.netfilter.nf_conntrack_max=65536' >> /etc/sysctl.conf
 
-# 11. 创建启动完成标记脚本
+# 12. 创建启动完成标记脚本
 echo "=== 创建启动信息脚本 ==="
 cat > /etc/rc.local << 'EOF'
 # Put your custom commands here that should be executed once
@@ -167,7 +167,7 @@ EOF
 
 chmod +x /etc/rc.local
 
-# 12. 重启相关服务
+# 13. 重启相关服务
 echo "=== 重启相关服务 ==="
 /etc/init.d/network reload
 /etc/init.d/firewall reload
@@ -175,7 +175,7 @@ echo "=== 重启相关服务 ==="
 /etc/init.d/dropbear restart
 /etc/init.d/dnsmasq restart
 
-# 13. 输出配置信息到日志
+# 14. 输出配置信息到日志
 echo ""
 echo "========================================="
 echo "OpenWrt 24.10.1 旁路由首次配置完成！"
