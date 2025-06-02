@@ -121,23 +121,14 @@ uci set wireless.default_radio0.disabled='1' 2>/dev/null || true
 uci set wireless.default_radio1.disabled='1' 2>/dev/null || true
 uci commit wireless
 
-# 10. 更新软件包列表并安装中文界面
-echo "=== 更新软件包并安装中文界面 ==="
-opkg update
 
-# 安装中文语言包 (24.10.1版本的包名)
-opkg install luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn
-
-# 安装常用软件包
-opkg install curl wget-ssl nano htop iperf3 openssh-sftp-server
-
-# 11. 设置默认语言为中文
+# 9. 设置默认语言为中文
 echo "=== 设置中文界面 ==="
 uci set luci.main.lang='zh_cn'
 uci set luci.main.mediaurlbase='/luci-static/bootstrap'
 uci commit luci
 
-# 12. 配置系统参数
+# 10. 配置系统参数
 echo "=== 配置系统参数 ==="
 # 启用IP转发
 echo 'net.ipv4.ip_forward=1' >> /etc/sysctl.conf
@@ -148,7 +139,7 @@ echo 'net.core.rmem_max=134217728' >> /etc/sysctl.conf
 echo 'net.core.wmem_max=134217728' >> /etc/sysctl.conf
 echo 'net.netfilter.nf_conntrack_max=65536' >> /etc/sysctl.conf
 
-# 13. 创建启动完成标记脚本
+# 11. 创建启动完成标记脚本
 echo "=== 创建启动信息脚本 ==="
 cat > /etc/rc.local << 'EOF'
 # Put your custom commands here that should be executed once
@@ -176,7 +167,7 @@ EOF
 
 chmod +x /etc/rc.local
 
-# 14. 重启相关服务
+# 12. 重启相关服务
 echo "=== 重启相关服务 ==="
 /etc/init.d/network reload
 /etc/init.d/firewall reload
@@ -184,7 +175,7 @@ echo "=== 重启相关服务 ==="
 /etc/init.d/dropbear restart
 /etc/init.d/dnsmasq restart
 
-# 15. 输出配置信息到日志
+# 13. 输出配置信息到日志
 echo ""
 echo "========================================="
 echo "OpenWrt 24.10.1 旁路由首次配置完成！"
