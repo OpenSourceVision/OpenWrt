@@ -144,7 +144,7 @@ echo 134217728 > /proc/sys/net/core/wmem_max
 
 logger -t startup "OpenWrt 24.10.1 旁路由启动完成 - IP: 192.168.110.110"
 
-# 显示启动信息
+# 信息
 echo "=================================="
 echo "OpenWrt 24.10.1 旁路由启动完成！"
 echo "管理地址: http://192.168.110.110"
@@ -189,14 +189,7 @@ echo "  DHCP服务: 已禁用"
 echo "  无线功能: 已禁用"
 echo "  SSH服务: 已启用 (端口22)"
 echo "  防火墙: 已配置 (开放模式)"
-echo "  软件源: 阿里云镜像"
 echo "  IP转发: 已启用"
-echo ""
-echo "下一步操作:"
-echo "  1. 重启系统: reboot"
-echo "  2. 设置root密码: passwd"
-echo "  3. 主路由DHCP指向此设备"
-echo "  4. 检查网络连通性"
 echo "========================================="
 
 exit 0
