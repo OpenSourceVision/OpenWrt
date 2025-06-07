@@ -25,6 +25,17 @@
 
 ## 使用方法
 
+## 自定义配置
+
+### 🎛️ 修改IP地址
+
+如需修改默认IP地址，编辑脚本中的以下部分：
+
+```bash
+uci set network.lan.ipaddr='你的IP地址'
+uci set network.lan.gateway='你的网关地址'
+```
+
 ### 步骤1：访问固件选择器
 
 打开 https://firmware-selector.openwrt.org/
@@ -60,6 +71,7 @@ luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn openssh-sftp-
 ### 步骤7：刷写固件
 
 
+
 ## 首次启动后
 
 ### 🌍 访问管理界面
@@ -69,34 +81,8 @@ luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn openssh-sftp-
 - **默认用户**: root（无密码，首次登录需设置）
 
 
-## 故障排除
 
-### 🔧 常见问题
 
-**Q: 无法访问管理界面？**
-- 检查设备IP是否为 192.168.110.110
-- 确认电脑与设备在同一网段
-
-**Q: 无法上网？**
-- 确认主路由DHCP设置正确
-- 检查网关配置
-- 验证DNS设置
-
-**Q: 软件包安装失败？**
-- 更新软件源：`opkg update`
-- 检查网络连接
-- 尝试切换镜像源
-
-## 自定义配置
-
-### 🎛️ 修改IP地址
-
-如需修改默认IP地址，编辑脚本中的以下部分：
-
-```bash
-uci set network.lan.ipaddr='你的IP地址'
-uci set network.lan.gateway='你的网关地址'
-```
 
 ## 注意事项
 
