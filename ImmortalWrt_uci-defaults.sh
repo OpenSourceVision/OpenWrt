@@ -1,5 +1,5 @@
 
-# OpenWrt 24.10.1 uci-defaults 首次启动配置脚本
+# ImmortalWrt 24.10.1 uci-defaults 首次启动配置脚本
 # 旁路由模式 - IP: 192.168.110.110
 
 # 设置脚本执行日志
