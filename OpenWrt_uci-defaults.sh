@@ -1,21 +1,42 @@
-
-# OpenWrt 24.10.1 uci-defaults 首次启动配置脚本
+# OpenWrt 24.10.1 uci-defaults 首次启动配置脚本 (使用ImmortalWrt软件源)
 # 旁路由模式
 
 # 设置脚本执行日志
 exec > /tmp/uci-defaults.log 2>&1
-echo "开始执行 OpenWrt 24.10.1 首次启动配置..."
+echo "开始执行 OpenWrt 24.10.1 首次启动配置 (ImmortalWrt软件源)..."
 echo "时间: $(date)"
 
-# 1. 更换软件源为阿里云镜像 (24.10.1版本)
-echo "=== 配置软件源 ==="
+# 1. 更换软件源为ImmortalWrt软件源 (兼容OpenWrt 24.10.1)
+echo "=== 配置ImmortalWrt软件源 ==="
 cat > /etc/opkg/distfeeds.conf << 'EOF'
-src/gz openwrt_core https://mirrors.aliyun.com/openwrt/releases/24.10.1/targets/x86/64/packages
-src/gz openwrt_base https://mirrors.aliyun.com/openwrt/releases/24.10.1/packages/x86_64/base
-src/gz openwrt_luci https://mirrors.aliyun.com/openwrt/releases/24.10.1/packages/x86_64/luci
-src/gz openwrt_packages https://mirrors.aliyun.com/openwrt/releases/24.10.1/packages/x86_64/packages
-src/gz openwrt_routing https://mirrors.aliyun.com/openwrt/releases/24.10.1/packages/x86_64/routing
-src/gz openwrt_telephony https://mirrors.aliyun.com/openwrt/releases/24.10.1/packages/x86_64/telephony
+src/gz immortalwrt_core https://downloads.immortalwrt.org/releases/24.04/targets/x86/64/packages
+src/gz immortalwrt_base https://downloads.immortalwrt.org/releases/24.04/packages/x86_64/base
+src/gz immortalwrt_luci https://downloads.immortalwrt.org/releases/24.04/packages/x86_64/luci
+src/gz immortalwrt_packages https://downloads.immortalwrt.org/releases/24.04/packages/x86_64/packages
+src/gz immortalwrt_routing https://downloads.immortalwrt.org/releases/24.04/packages/x86_64/routing
+src/gz immortalwrt_telephony https://downloads.immortalwrt.org/releases/24.04/packages/x86_64/telephony
+src/gz immortalwrt_kmod https://downloads.immortalwrt.org/releases/24.04/targets/x86/64/kmods
+EOF
+
+# 备用镜像源配置（如果需要更快速度，可以替换上面的配置）
+cat > /etc/opkg/distfeeds.conf.backup << 'EOF'
+# 中科大镜像源
+src/gz immortalwrt_core https://mirrors.ustc.edu.cn/immortalwrt/releases/24.04/targets/x86/64/packages
+src/gz immortalwrt_base https://mirrors.ustc.edu.cn/immortalwrt/releases/24.04/packages/x86_64/base
+src/gz immortalwrt_luci https://mirrors.ustc.edu.cn/immortalwrt/releases/24.04/packages/x86_64/luci
+src/gz immortalwrt_packages https://mirrors.ustc.edu.cn/immortalwrt/releases/24.04/packages/x86_64/packages
+src/gz immortalwrt_routing https://mirrors.ustc.edu.cn/immortalwrt/releases/24.04/packages/x86_64/routing
+src/gz immortalwrt_telephony https://mirrors.ustc.edu.cn/immortalwrt/releases/24.04/packages/x86_64/telephony
+src/gz immortalwrt_kmod https://mirrors.ustc.edu.cn/immortalwrt/releases/24.04/targets/x86/64/kmods
+
+# 阿里云镜像源（备选）
+# src/gz immortalwrt_core https://mirrors.aliyun.com/immortalwrt/releases/24.04/targets/x86/64/packages
+# src/gz immortalwrt_base https://mirrors.aliyun.com/immortalwrt/releases/24.04/packages/x86_64/base
+# src/gz immortalwrt_luci https://mirrors.aliyun.com/immortalwrt/releases/24.04/packages/x86_64/luci
+# src/gz immortalwrt_packages https://mirrors.aliyun.com/immortalwrt/releases/24.04/packages/x86_64/packages
+# src/gz immortalwrt_routing https://mirrors.aliyun.com/immortalwrt/releases/24.04/packages/x86_64/routing
+# src/gz immortalwrt_telephony https://mirrors.aliyun.com/immortalwrt/releases/24.04/packages/x86_64/telephony
+# src/gz immortalwrt_kmod https://mirrors.aliyun.com/immortalwrt/releases/24.04/targets/x86/64/kmods
 EOF
 
 # 2. 配置系统设置 - 上海时区
@@ -28,18 +49,18 @@ uci commit system
 
 # 3. 配置NTP服务器
 echo "=== 配置NTP服务器 ==="
-# 24.10.1版本使用新的NTP配置方式
 uci -q delete system.ntp.server
 uci add_list system.ntp.server='ntp.aliyun.com'
 uci add_list system.ntp.server='time1.cloud.tencent.com'
 uci add_list system.ntp.server='cn.pool.ntp.org'
+uci add_list system.ntp.server='pool.ntp.org'
 uci set system.ntp.enabled='1'
 uci set system.ntp.enable_server='0'
 uci commit system
 
-# 4. 配置网络设备 (24.10.1使用device配置)
+# 4. 配置网络设备
 echo "=== 配置网络设备 ==="
-# 确保桥接设备存在
+# ImmortalWrt设备配置
 uci set network.@device[0]=device
 uci set network.@device[0].name='br-lan'
 uci set network.@device[0].type='bridge'
@@ -49,7 +70,7 @@ uci set network.@device[0].igmp_snooping='1'
 uci set network.@device[0].stp='0'
 uci commit network
 
-# 5. 配置LAN接口 - 旁路由模式 (24.10.1配置方式)
+# 5. 配置LAN接口 - 旁路由模式
 echo "=== 配置LAN接口 ==="
 uci set network.lan=interface
 uci set network.lan.proto='static'
@@ -75,7 +96,7 @@ uci set dhcp.@dnsmasq[0].domainneeded='1'
 uci set dhcp.@dnsmasq[0].boguspriv='1'
 uci commit dhcp
 
-# 7. 配置防火墙 - 24.10.1防火墙配置
+# 7. 配置防火墙
 echo "=== 配置防火墙 ==="
 # 默认规则配置
 uci set firewall.@defaults[0].input='ACCEPT'
@@ -102,7 +123,7 @@ uci set firewall.@zone[1].mtu_fix='1' 2>/dev/null || true
 
 uci commit firewall
 
-# 8. 配置SSH访问 (24.10.1使用dropbear)
+# 8. 配置SSH访问
 echo "=== 配置SSH访问 ==="
 uci set dropbear.@dropbear[0].PasswordAuth='on'
 uci set dropbear.@dropbear[0].RootPasswordAuth='on'
@@ -110,7 +131,7 @@ uci set dropbear.@dropbear[0].Port='22'
 uci set dropbear.@dropbear[0].Interface='lan'
 uci commit dropbear
 
-# 9. 禁用无线功能 (24.10.1可能有多个radio)
+# 9. 禁用无线功能
 echo "=== 禁用无线功能 ==="
 # 遍历所有可能的radio设备
 for i in 0 1 2 3; do
@@ -120,7 +141,6 @@ done
 uci set wireless.default_radio0.disabled='1' 2>/dev/null || true
 uci set wireless.default_radio1.disabled='1' 2>/dev/null || true
 uci commit wireless
-
 
 # 10. 设置默认语言为中文
 echo "=== 设置中文界面 ==="
@@ -167,7 +187,32 @@ EOF
 
 chmod +x /etc/rc.local
 
-# 13. 重启相关服务
+# 13. 创建软件源更新脚本
+echo "=== 创建软件源管理脚本 ==="
+cat > /usr/bin/update-feeds << 'EOF'
+#!/bin/sh
+# ImmortalWrt软件源更新脚本 (适用于OpenWrt 24.10.1)
+
+echo "正在更新ImmortalWrt软件源..."
+
+# 更新软件包列表
+opkg update
+
+echo "软件源更新完成！"
+echo "可用命令："
+echo "  opkg list | grep xxx    # 搜索软件包"
+echo "  opkg install xxx        # 安装软件包"
+echo "  opkg remove xxx         # 卸载软件包"
+echo "  opkg list-installed     # 查看已安装软件包"
+EOF
+
+chmod +x /usr/bin/update-feeds
+
+# 14. 更新软件包列表
+echo "=== 更新软件包列表 ==="
+opkg update
+
+# 15. 重启相关服务
 echo "=== 重启相关服务 ==="
 /etc/init.d/network reload
 /etc/init.d/firewall reload
@@ -175,12 +220,12 @@ echo "=== 重启相关服务 ==="
 /etc/init.d/dropbear restart
 /etc/init.d/dnsmasq restart
 
-# 14. 输出配置信息到日志
+# 16. 输出配置信息到日志
 echo ""
 echo "========================================="
 echo "OpenWrt 24.10.1 旁路由首次配置完成！"
 echo "========================================="
-echo "版本信息: OpenWrt 24.10.1"
+echo "版本信息: OpenWrt 24.10.1 (使用ImmortalWrt软件源)"
 echo "配置时间: $(date)"
 echo ""
 echo "网络配置:"
@@ -200,14 +245,26 @@ echo "  DHCP服务: 已禁用"
 echo "  无线功能: 已禁用"
 echo "  SSH服务: 已启用 (端口22)"
 echo "  防火墙: 已配置 (开放模式)"
-echo "  软件源: 阿里云镜像"
+echo "  软件源: ImmortalWrt软件源 (24.04版本)"
 echo "  IP转发: 已启用"
+echo ""
+echo "ImmortalWrt软件源优势:"
+echo "  更多软件包支持"
+echo "  更好的硬件兼容性"
+echo "  增强的网络功能"
+echo "  活跃的社区支持"
+echo ""
+echo "软件源管理:"
+echo "  更新软件源: update-feeds"
+echo "  备用镜像源: /etc/opkg/distfeeds.conf.backup"
+echo "  切换镜像源: cp /etc/opkg/distfeeds.conf.backup /etc/opkg/distfeeds.conf"
 echo ""
 echo "下一步操作:"
 echo "  1. 重启系统: reboot"
 echo "  2. 设置root密码: passwd"
 echo "  3. 主路由DHCP指向此设备"
 echo "  4. 检查网络连通性"
+echo "  5. 安装ImmortalWrt特色软件包"
 echo "========================================="
 
 exit 0
