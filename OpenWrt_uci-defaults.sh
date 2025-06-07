@@ -1,6 +1,6 @@
 
 # OpenWrt 24.10.1 uci-defaults 首次启动配置脚本
-# 旁路由模式 - IP: 192.168.110.110
+# 旁路由模式
 
 # 设置脚本执行日志
 exec > /tmp/uci-defaults.log 2>&1
