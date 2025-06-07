@@ -95,21 +95,6 @@ uci show network.lan
    opkg update
    ```
 
-3. **主路由配置**
-   - 将主路由的DHCP配置中的网关指向 `192.168.110.110`
-   - 或在设备上手动设置网关为 `192.168.110.110`
-
-## 软件源管理
-
-### 🔄 切换镜像源
-
-如果默认软件源速度较慢，可以切换到国内镜像：
-
-```bash
-# 切换到备用镜像源（中科大/阿里云）
-cp /etc/opkg/distfeeds.conf.backup /etc/opkg/distfeeds.conf
-opkg update
-```
 
 ### 📦 常用软件包
 
