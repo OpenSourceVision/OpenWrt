@@ -23,57 +23,48 @@
 - 提供多个国内镜像源备选
 - 自动更新软件包列表
 
-### 🔒 安全配置
-- SSH服务配置（端口22）
-- 防火墙开放模式设置
-- 禁用无线功能
-
 ## 使用方法
 
 ### 步骤1：访问固件选择器
 
-打开 [OpenWrt 固件选择器](https://firmware-selector.openwrt.org/)
+打开 https://firmware-selector.openwrt.org/
 
-### 步骤2：选择设备型号
+### 步骤2：选择设备和版本
 
-1. 在搜索框中输入你的设备型号
-2. 选择正确的硬件版本
-3. 确认选择的是 **24.10.1** 版本
+1. 选择对应的平台
+2. 选择版本：**24.10.1**
+3. 输入你的设备型号
 
-### 步骤3：添加脚本
+### 步骤3：添加预装软件包
 
-1. 在页面中找到 **"首次运行脚本"** 或 **"First boot script"** 部分
-2. 将本仓库中的完整脚本代码复制并粘贴到输入框中
+在 **"预安装的软件包"** 后面复制粘贴：
 
-![固件选择器示例](https://via.placeholder.com/600x300/2196F3/FFFFFF?text=OpenWrt+Firmware+Selector)
+**OpenWrt 24 系统必装软件：**
+```
+luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn openssh-sftp-server curl wget-ssl nano htop iperf3 luci-theme-argon
+```
 
-### 步骤4：下载固件
+### 步骤4：添加首次启动脚本
 
-1. 点击 **"下载固件"** 或 **"Download firmware"** 按钮
-2. 选择适合你设备的固件格式（通常是 `.img` 或 `.bin` 文件）
+在 **"首次启动时运行的脚本（uci-defaults）"** 部分，将本仓库中的完整脚本代码复制并粘贴到输入框中。
 
-### 步骤5：刷写固件
+### 步骤5：请求构建
 
-将下载的固件刷入你的设备，具体方法因设备而异：
-- Web界面升级
-- TFTP刷写
-- U-Boot刷写
-- 其他厂商特定方法
+点击 **"请求构建"** 按钮，等待固件构建完成。
+
+### 步骤6：下载对应镜像文件
+
+**推荐下载：COMBINED-EFI (SQUASHFS)镜像文件**
+
+选择适合你设备的固件格式：
+- **COMBINED-EFI (SQUASHFS)**：推荐选择，支持EFI启动
+- 其他格式根据设备需求选择
+
+### 步骤7：刷写固件
+
+将下载的固件刷入你的设备
 
 ## 首次启动后
-
-### 🔍 检查配置
-
-系统启动后，脚本会自动执行并在 `/tmp/uci-defaults.log` 中记录执行日志。
-
-```bash
-# 查看脚本执行日志
-cat /tmp/uci-defaults.log
-
-# 检查网络配置
-ip addr show
-uci show network.lan
-```
 
 ### 🌍 访问管理界面
 
@@ -90,29 +81,8 @@ uci show network.lan
 
 2. **更新软件包**
    ```bash
-   update-feeds  # 使用脚本提供的便捷命令
-   # 或者
-   opkg update
+   update-feeds
    ```
-
-
-### 📦 常用软件包
-
-使用 ImmortalWrt 软件源后，可以安装更多软件包：
-
-```bash
-# 网络工具
-opkg install curl wget htop
-
-# 科学上网相关
-opkg install luci-app-passwall luci-app-ssr-plus
-
-# 广告屏蔽
-opkg install luci-app-adbyby-plus
-
-# 网络加速
-opkg install luci-app-turboacc
-```
 
 ## 故障排除
 
@@ -121,30 +91,16 @@ opkg install luci-app-turboacc
 **Q: 无法访问管理界面？**
 - 检查设备IP是否为 192.168.110.110
 - 确认电脑与设备在同一网段
-- 检查防火墙设置
 
 **Q: 无法上网？**
 - 确认主路由DHCP设置正确
-- 检查网关配置：`uci show network.lan.gateway`
-- 验证DNS设置：`nslookup baidu.com`
+- 检查网关配置
+- 验证DNS设置
 
 **Q: 软件包安装失败？**
 - 更新软件源：`opkg update`
 - 检查网络连接
 - 尝试切换镜像源
-
-### 📝 日志查看
-
-```bash
-# 脚本执行日志
-cat /tmp/uci-defaults.log
-
-# 系统启动日志
-dmesg
-
-# 网络服务日志
-logread | grep network
-```
 
 ## 自定义配置
 
@@ -157,31 +113,15 @@ uci set network.lan.ipaddr='你的IP地址'
 uci set network.lan.gateway='你的网关地址'
 ```
 
-### 🔧 其他自定义
-
-脚本支持以下自定义：
-- 修改主机名
-- 调整DNS服务器
-- 启用/禁用特定服务
-- 修改防火墙规则
-
 ## 注意事项
 
 ⚠️ **重要提醒**：
 - 本脚本专为旁路由模式设计，不适用于主路由
 - 刷机有风险，操作前请确保了解设备的救砖方法
 - 首次使用建议在测试环境中验证
-- 不同设备可能需要微调脚本参数
-
-## 技术支持
-
-如遇问题，可以：
-1. 查看 OpenWrt 官方文档
-2. 访问 ImmortalWrt 社区论坛
-3. 检查设备特定的使用说明
 
 ---
 
-**最后更新**: 2025年6月
-**适用版本**: OpenWrt 24.10.1
+**最后更新**: 2025年6月  
+**适用版本**: OpenWrt 24.10.1  
 **软件源**: ImmortalWrt 24.04
