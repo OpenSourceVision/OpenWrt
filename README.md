@@ -106,7 +106,3 @@ uci set network.lan.gateway='你的网关地址'
 - 首次使用建议在测试环境中验证
 
 ---
-
-**最后更新**: 2025年6月  
-**适用版本**: OpenWrt 24.10.1  
-**软件源**: ImmortalWrt 24.04
