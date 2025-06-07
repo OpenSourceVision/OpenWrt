@@ -52,17 +52,13 @@ luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn openssh-sftp-
 
 点击 **"请求构建"** 按钮，等待固件构建完成。
 
-### 步骤6：下载对应镜像文件
+### 步骤6：下载镜像文件
 
 **推荐下载：COMBINED-EFI (SQUASHFS)镜像文件**
 
-选择适合你设备的固件格式：
-- **COMBINED-EFI (SQUASHFS)**：推荐选择，支持EFI启动
-- 其他格式根据设备需求选择
 
 ### 步骤7：刷写固件
 
-将下载的固件刷入你的设备
 
 ## 首次启动后
 
@@ -72,17 +68,6 @@ luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn openssh-sftp-
 - **SSH访问**: `ssh root@192.168.110.110`
 - **默认用户**: root（无密码，首次登录需设置）
 
-### ⚙️ 后续配置
-
-1. **设置管理员密码**
-   ```bash
-   passwd
-   ```
-
-2. **更新软件包**
-   ```bash
-   update-feeds
-   ```
 
 ## 故障排除
 
