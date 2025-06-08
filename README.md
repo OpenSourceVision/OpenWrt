@@ -55,10 +55,13 @@ uci set network.lan.gateway='你的网关地址'
 ```
 luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn openssh-sftp-server curl wget-ssl nano htop iperf3
 ```
-
+<img src="https://github.com/OpenSourceVision/OpenWrt/blob/ba8247cd948133a3d7bd8100203a09cfd75a5769/%E9%A2%84%E5%AE%89%E8%A3%85%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%8C%85.png" 
+  
 ### 步骤4：添加首次启动脚本
 
 在 **"首次启动时运行的脚本（uci-defaults）"** 部分，将本仓库中的完整脚本代码复制并粘贴到输入框中。
+
+<img src="https://github.com/OpenSourceVision/OpenWrt/blob/ba8247cd948133a3d7bd8100203a09cfd75a5769/%E9%A6%96%E6%AC%A1%E5%90%AF%E5%8A%A8%E6%97%B6%E8%BF%90%E8%A1%8C%E7%9A%84%E8%84%9A%E6%9C%AC%EF%BC%88uci-defaults%EF%BC%89.png" />
 
 ### 步骤5：请求构建
 
