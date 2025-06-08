@@ -4,7 +4,9 @@
 
 OpenWrt 自动化配置方案，支持旁路由和主路由两种模式。使用 ImmortalWrt 软件源，一键完成中文界面、网络优化等配置。
 
----
+## 📣 特殊说明
+
+同样适用于ImmortalWrt的构建。
 
 ## 🏗️ 固件构建
 
@@ -54,7 +56,7 @@ luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn openssh-sftp-
 
 ## 📝 使用说明
 
-[openwrt_Main Router.sh](https://github.com/OpenSourceVision/OpenWrt/blob/main/OpenWrt.md)
+[使用说明](https://github.com/OpenSourceVision/OpenWrt/blob/main/OpenWrt.md)
 
 ## ⚠️ 注意事项
 
