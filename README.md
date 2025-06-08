@@ -13,16 +13,13 @@ OpenWrt 自动化配置方案，支持旁路由和主路由两种模式。使用
 ### 1. 访问固件选择器
 打开 https://firmware-selector.openwrt.org/
 
-### 2. 预装软件包
-```bash
-luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn openssh-sftp-server curl wget-ssl nano htop iperf3
-```
+### 2. 配置预装软件包
 
 ### 3. 添加配置脚本
 将下方对应的脚本复制到 **"首次启动时运行的脚本（uci-defaults）"** 中。
 
 ### 4. 构建下载
-点击 **"请求构建"**，下载 **COMBINED-EFI (SQUASHFS)** 镜像。
+点击 **"请求构建"**，下载镜像。
 
 ---
 
@@ -31,8 +28,8 @@ luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn openssh-sftp-
 **适用场景：** 已有主路由，需要增强网络功能
 
 **默认配置：**
-- IP地址：192.168.110.110
-- 网关：192.168.110.1
+- IP地址：192.168.X.110
+- 网关：192.168.X.1
 - 禁用DHCP和WiFi
 
 **配置脚本：** [OpenWrt_Bypass.sh](https://github.com/OpenSourceVision/OpenWrt/blob/main/OpenWrt_Bypass.sh)
@@ -44,7 +41,7 @@ luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn openssh-sftp-
 **适用场景：** 替换现有路由器，提供完整路由功能
 
 **默认配置：**
-- IP地址：192.168.110.1
+- IP地址：192.168.X.1
 - 启用DHCP和WiFi
 - WiFi名称：OpenWrt-Main，密码：12345678
 
