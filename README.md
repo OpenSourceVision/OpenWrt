@@ -55,7 +55,7 @@ uci set network.lan.gateway='你的网关地址'
 ```
 luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn openssh-sftp-server curl wget-ssl nano htop iperf3
 ```
-<img src="https://github.com/OpenSourceVision/OpenWrt/blob/ba8247cd948133a3d7bd8100203a09cfd75a5769/%E9%A2%84%E5%AE%89%E8%A3%85%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%8C%85.png" 
+<img src="https://github.com/OpenSourceVision/OpenWrt/blob/ba8247cd948133a3d7bd8100203a09cfd75a5769/%E9%A2%84%E5%AE%89%E8%A3%85%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%8C%85.png" />
   
 ### 步骤4：添加首次启动脚本
 
