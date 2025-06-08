@@ -14,7 +14,7 @@ OpenWrt 自动化配置方案，支持旁路由和主路由两种模式。使用
 打开 https://firmware-selector.openwrt.org/
 
 ### 2. 配置预装软件包
-[软件清单](https://github.com/OpenSourceVision/OpenWrt/blob/main/OpenWrt.md)
+[软件清单](https://github.com/OpenSourceVision/OpenWrt/blob/main/Software.md)
 ### 3. 添加配置脚本
 将下方对应的脚本复制到 **"首次启动时运行的脚本（uci-defaults）"** 中。
 
