@@ -28,8 +28,8 @@ OpenWrt 自动化配置方案，支持旁路由和主路由两种模式。使用
 **适用场景：** 已有主路由，需要增强网络功能
 
 **默认配置：**
-- IP地址：192.168.X.110
-- 网关：192.168.X.1
+- IP地址：192.168.X.X
+- 网关：192.168.X.X
 - 禁用DHCP和WiFi
 
 **配置脚本：** [OpenWrt_Bypass.sh](https://github.com/OpenSourceVision/OpenWrt/blob/main/OpenWrt_Bypass.sh)
@@ -41,7 +41,7 @@ OpenWrt 自动化配置方案，支持旁路由和主路由两种模式。使用
 **适用场景：** 替换现有路由器，提供完整路由功能
 
 **默认配置：**
-- IP地址：192.168.X.1
+- IP地址：192.168.X.X
 - 启用DHCP和WiFi
 - WiFi名称：OpenWrt-Main，密码：12345678
 
