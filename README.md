@@ -8,6 +8,10 @@ OpenWrt 自动化配置方案，支持旁路由和主路由两种模式。使用
 
 同样适用于ImmortalWrt的构建。删除脚本里面的软件源部分。强烈推荐使用ImmortalWrt。
 打开 https://firmware-selector.immortalwrt.org/
+
+## 📝 使用说明
+
+[使用说明](https://github.com/OpenSourceVision/OpenWrt/blob/main/OpenWrt.md)
 ## 🏗️ 固件构建
 
 ### 1. 访问固件选择器
@@ -51,9 +55,7 @@ OpenWrt 自动化配置方案，支持旁路由和主路由两种模式。使用
 
 ---
 
-## 📝 使用说明
 
-[使用说明](https://github.com/OpenSourceVision/OpenWrt/blob/main/OpenWrt.md)
 
 ## ⚠️ 注意事项
 
