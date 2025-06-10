@@ -83,15 +83,6 @@ luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn openssh-sftp-
 
 - **Web管理**: http://192.168.110.110
 - **SSH访问**: `ssh root@192.168.110.110`
-- **默认用户**: root（无密码，首次登录需设置）
-
-
-
-
-
-## 注意事项
-
-⚠️ **重要提醒**：
-- 本脚本专为旁路由模式设计，不适用于主路由
+- **默认用户**: root（无密码，首次登录需设置
 
 ---
