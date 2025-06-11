@@ -28,7 +28,7 @@ luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn openssh-sftp-
 
 ### 4. 添加配置脚本
 根据需要选择对应脚本复制到 **"首次启动时运行的脚本（uci-defaults）"**：
-- 旁路由：`OpenWrt_Bypass.sh`(https://github.com/OpenSourceVision/OpenWrt/blob/main/openwrt_Main Router.sh)
+- 旁路由：`OpenWrt_Bypass.sh`[直达脚本](https://raw.githubusercontent.com/OpenSourceVision/OpenWrt/refs/heads/main/OpenWrt_Bypass.sh)
 
 
 - 主路由：
