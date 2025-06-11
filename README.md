@@ -32,7 +32,8 @@ luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn openssh-sftp-
 
 
 - 主路由：
-[ImmortalWrt](https://github.com/OpenSourceVision/OpenWrt/blob/main/openwrt_Main Router.sh)
+`openwrt_Main Router.sh`[直达脚本](https://github.com/OpenSourceVision/OpenWrt/blob/main/openwrt_Main Router.sh)
+
 
 
 
