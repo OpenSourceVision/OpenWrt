@@ -9,9 +9,9 @@ OpenWrt 自动化配置方案，支持旁路由和主路由模式，使用 uci-d
 ## 固件构建
 
 ### 1. 访问固件选择器
-- **OpenWrt**: [OpenWrt](https://firmware-selector.openwrt.org/ )
+- **OpenWrt**: [点击访问](https://firmware-selector.openwrt.org/ )
 
-- **ImmortalWrt**: [ImmortalWrt](https://firmware-selector.immortalwrt.org/) （推荐）
+- **ImmortalWrt**: [点击访问](https://firmware-selector.immortalwrt.org/) （推荐）
 
 ### 2. 选择设备版本
 输入设备型号，选择自己想要的版本 **24.X.X**
