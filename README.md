@@ -9,8 +9,7 @@ OpenWrt 自动化配置方案，支持旁路由和主路由模式，使用 uci-d
 ## 固件构建
 
 ### 1. 访问固件选择器
-- **OpenWrt**: [点击访问](https://firmware-selector.openwrt.org/ )
-
+- **OpenWrt**: [点击访问](https://firmware-selector.openwrt.org/)
 - **ImmortalWrt**: [点击访问](https://firmware-selector.immortalwrt.org/)
 
 ### 2. 选择设备版本
@@ -21,6 +20,7 @@ OpenWrt 自动化配置方案，支持旁路由和主路由模式，使用 uci-d
 ```
 luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn openssh-sftp-server curl wget-ssl nano htop iperf3
 ```
+
 **ImmortalWrt 24 系统必装软件：**
 ```
 luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn openssh-sftp-server curl wget-ssl nano htop iperf3 luci-theme-argon
@@ -28,18 +28,14 @@ luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn openssh-sftp-
 
 ### 4. 添加配置脚本
 根据需要选择对应脚本复制到 **"首次启动时运行的脚本（uci-defaults）"**：
-- 旁路由：`OpenWrt_Bypass.sh`[直达脚本](https://raw.githubusercontent.com/OpenSourceVision/OpenWrt/refs/heads/main/OpenWrt_Bypass.sh)
 
-
-- 主路由：
-`openwrt_Main Router.sh`[直达脚本](https://github.com/OpenSourceVision/OpenWrt/blob/main/openwrt_Main Router.sh)
-
-
-
+- **旁路由**：`OpenWrt_Bypass.sh` [直达脚本](https://raw.githubusercontent.com/OpenSourceVision/OpenWrt/refs/heads/main/OpenWrt_Bypass.sh)
+- **主路由**：`OpenWrt_Main_Router.sh` [直达脚本](https://raw.githubusercontent.com/OpenSourceVision/OpenWrt/refs/heads/main/OpenWrt_Main_Router.sh)
 
 ### 5. 构建下载
 点击 **"请求构建"**
-下载固件 推荐下载 **COMBINED-EFI (SQUASHFS)** 镜像
+
+下载固件，推荐下载 **COMBINED-EFI (SQUASHFS)** 镜像
 
 ## 配置模式
 
