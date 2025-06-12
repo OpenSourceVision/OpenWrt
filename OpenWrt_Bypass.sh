@@ -1,5 +1,5 @@
 #!/bin/sh
-# OpenWrt 24.0.0 旁路由配置脚本 - 修改版
+# OpenWrt 24.0.0 旁路由配置脚本
 
 echo "开始配置OpenWrt旁路由模式..."
 
