@@ -95,8 +95,6 @@ opkg update
 
 echo "================================================"
 echo "OpenWrt主路由配置完成！"
-echo "设备IP: 192.168.110.1"
-echo "Web管理: http://192.168.110.1"
 echo "WiFi名称: OpenWrt-Main"
 echo "WiFi密码: 12345678"
 echo "请重启系统: reboot"
