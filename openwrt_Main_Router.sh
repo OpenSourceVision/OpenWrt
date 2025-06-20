@@ -16,7 +16,6 @@ src/gz immortalwrt_kmod https://downloads.immortalwrt.org/releases/24.04/targets
 EOF
 
 # 2. 系统基本设置
-uci set system.@system[0].hostname='MainRouter'
 uci set system.@system[0].timezone='CST-8'
 uci set system.@system[0].zonename='Asia/Shanghai'
 uci commit system
