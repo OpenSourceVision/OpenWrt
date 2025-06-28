@@ -3,17 +3,6 @@
 
 echo "开始配置OpenWrt旁路由模式..."
 
-# 1. 配置ImmortalWrt软件源
-echo "配置ImmortalWrt软件源..."
-cat > /etc/opkg/distfeeds.conf << 'EOF'
-src/gz immortalwrt_core https://downloads.immortalwrt.org/releases/24.04/targets/x86/64/packages
-src/gz immortalwrt_base https://downloads.immortalwrt.org/releases/24.04/packages/x86_64/base
-src/gz immortalwrt_luci https://downloads.immortalwrt.org/releases/24.04/packages/x86_64/luci
-src/gz immortalwrt_packages https://downloads.immortalwrt.org/releases/24.04/packages/x86_64/packages
-src/gz immortalwrt_routing https://downloads.immortalwrt.org/releases/24.04/packages/x86_64/routing
-src/gz immortalwrt_telephony https://downloads.immortalwrt.org/releases/24.04/packages/x86_64/telephony
-src/gz immortalwrt_kmod https://downloads.immortalwrt.org/releases/24.04/targets/x86/64/kmods
-EOF
 
 # 2. 系统基本设置
 uci set system.@system[0].timezone='CST-8'
