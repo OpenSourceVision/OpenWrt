@@ -43,6 +43,10 @@ luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn openssh-sftp-
 ```
 luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn openssh-sftp-server curl wget-ssl nano htop iperf3 luci-theme-argon luci-app-diskman luci-i18n-diskman-zh-cn
 ```
+包含docker
+```
+luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn openssh-sftp-server curl wget-ssl nano htop iperf3 luci-theme-argon luci-app-diskman luci-i18n-diskman-zh-cn docker dockerd docker-compose luci-lib-docker luci-app-dockerman luci-i18n-dockerman-zh-cn
+```
 #### 如图所示：
 <img src="https://github.com/OpenSourceVision/OpenWrt/blob/ba8247cd948133a3d7bd8100203a09cfd75a5769/%E9%A2%84%E5%AE%89%E8%A3%85%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%8C%85.png" />
 
