@@ -39,11 +39,11 @@ uci set wireless.default_radio0.key='WiFi密码'
 luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn openssh-sftp-server curl wget-ssl nano htop iperf3
 ```
 
-**ImmortalWrt 24 系统必装软件：**
+**ImmortalWrt 24 系统必装软件：**【无 Docker】
 ```
 luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn openssh-sftp-server curl wget-ssl nano htop iperf3 luci-theme-argon luci-app-diskman luci-i18n-diskman-zh-cn
 ```
-包含docker
+**ImmortalWrt 24 系统必装软件：**【有 Docker】
 ```
 luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn openssh-sftp-server curl wget-ssl nano htop iperf3 luci-theme-argon luci-app-diskman luci-i18n-diskman-zh-cn docker dockerd docker-compose luci-lib-docker luci-app-dockerman luci-i18n-dockerman-zh-cn
 ```
@@ -67,14 +67,14 @@ luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn openssh-sftp-
 
 ### 🔀 旁路由模式
 **适用**：已有主路由，增强网络功能
-- IP：192.168.110.110/24
+- IP：192.168.110.110
 - 网关：192.168.110.1
 - DNS：223.5.5.5, 192.168.110.1
 - 禁用 DHCP 和 WiFi
 
 ### 🌐 主路由模式
 **适用**：替换现有路由器
-- IP：192.168.110.110/24
+- IP：192.168.110.110
 - WiFi：OpenWrt-Main / 12345678
 - 启用 DHCP 和 WiFi
 - ⚠️ **需修改脚本中的宽带账号密码**
