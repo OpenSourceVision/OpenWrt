@@ -41,7 +41,7 @@ luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn openssh-sftp-
 
 **ImmortalWrt 24 系统必装软件：**【无 Docker】
 ```
-luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn openssh-sftp-server curl wget-ssl nano htop iperf3 luci-theme-argon luci-app-diskman luci-i18n-diskman-zh-cn
+luci-app-openclash luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn openssh-sftp-server curl wget-ssl nano htop iperf3 luci-theme-argon luci-app-diskman luci-i18n-diskman-zh-cn
 ```
 **ImmortalWrt 24 系统必装软件：**【有 Docker】
 ```
