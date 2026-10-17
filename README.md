@@ -34,16 +34,16 @@ uci set wireless.default_radio0.key='WiFi密码'
 输入设备型号，选择自己想要的版本 **24.X.X**
 
 ### 3. 添加预装软件包
-**OpenWrt 24 系统必装软件：**
+**OpenWrt  系统必装软件：**
 ```
 luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn openssh-sftp-server curl wget-ssl nano htop iperf3
 ```
 
-**ImmortalWrt 24 系统必装软件：**【无 Docker】
+**ImmortalWrt  系统必装软件：**【无 Docker】
 ```
 luci-app-openclash luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn openssh-sftp-server curl wget-ssl nano htop iperf3 luci-theme-argon luci-app-diskman luci-i18n-diskman-zh-cn luci-app-ttyd luci-app-autoreboot luci-app-bbr luci-app-adguardhome luci-app-homeproxy
 ```
-**ImmortalWrt 24 系统必装软件：**【有 Docker】
+**ImmortalWrt  系统必装软件：**【有 Docker】
 ```
 luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn openssh-sftp-server curl wget-ssl nano htop iperf3 luci-theme-argon luci-app-diskman luci-i18n-diskman-zh-cn docker dockerd docker-compose luci-lib-docker luci-app-dockerman luci-i18n-dockerman-zh-cn luci-app-ttyd luci-app-autoreboot luci-app-bbr luci-app-adguardhome luci-app-homeproxy
 ```
