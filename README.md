@@ -1,4 +1,4 @@
-# OpenWrt 24.0.0 配置指南
+# OpenWrt 25.0.0 配置指南
 
 ## 概述
 
@@ -31,7 +31,7 @@ uci set wireless.default_radio0.key='WiFi密码'
 - **ImmortalWrt**: [点击访问](https://firmware-selector.immortalwrt.org/)
 
 ### 2. 选择设备版本
-输入设备型号，选择自己想要的版本 **24.X.X**
+输入设备型号，选择自己想要的版本.
 
 ### 3. 添加预装软件包
 **OpenWrt  系统必装软件：**
