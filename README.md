@@ -4,7 +4,7 @@
 
 旁路由（单臂网关）自动化配置方案：用 uci-defaults 脚本一次完成中文界面、网络参数、关闭 DHCP 等配置。
 
-**推荐使用 ImmortalWrt**（删除脚本中的软件源部分）。
+**推荐使用 ImmortalWrt**。
 
 ## 自定义配置
 
@@ -54,7 +54,7 @@ luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn openssh-sftp-
 
 把旁路由脚本复制到 **“首次启动时运行的脚本（uci-defaults）”**：
 
-- **旁路由**：`OpenWrt_Bypass.sh` [直达脚本](https://raw.githubusercontent.com/OpenSourceVision/OpenWrt/refs/heads/main/OpenWrt_Bypass.sh)
+- **旁路由**：`OpenWrt_Bypass.sh` [直达脚本](https://raw.githubusercontent.com/OpenSourceVision/OpenWrt/refs/heads/main/OpenWrt_Bypass-25.12.sh)
 
 #### 如图所示：
 
